@@ -9,3 +9,9 @@ En obras de construcción, el color del casco identifica el **rol** de cada trab
 - mAP50 ≥ 0.70 sobre el conjunto de validación
 - Detección confiable de las 5 clases de casco en condiciones variables de iluminación y distancia
 - Pipeline reproducible 100% en la nube (Google Colab), sin instalaciones locales
+
+**Reglas de etiquetado:**
+- Se etiqueta el casco completo (bounding box ajustado, sin exceso de fondo)
+- Se ignoran cascos parcialmente visibles (<30% visible)
+- Se etiqueta el color dominante visible, no el color en sombra
+- Imágenes obtenidas de [Unsplash](https://unsplash.com) (licencia libre para uso académico)
