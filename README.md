@@ -113,3 +113,5 @@ dataset = version.download("yolo26")
 | Última ejecución exitosa | _3/15/2026 - 1:00AM_ |
 | GPU usada | NVIDIA T4 (Google Colab) |
 | Tiempo estimadO de ejecucion | ~5-7 min con GPU T4 |
+
+![plot_curvas_reproductibilidad](results/plot_curvas_reproductibilidad.png)
