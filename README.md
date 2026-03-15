@@ -115,3 +115,9 @@ dataset = version.download("yolo26")
 | Tiempo estimadO de ejecucion | ~5-7 min con GPU T4 |
 
 ![plot_curvas_reproductibilidad](results/plot_curvas_reproductibilidad.png)
+
+---
+
+### 🔗 Archivo best.pt
+
+[best.pt](https://drive.google.com/drive/folders/1jk-Nu9z-Mfewut5IRE0tbb82enFlDtD4?usp=sharing)
