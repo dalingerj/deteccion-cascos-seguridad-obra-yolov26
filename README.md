@@ -34,8 +34,8 @@ En obras de construcción, el color del casco identifica el **rol** de cada trab
 
 ## 📦 Dataset
 
-- **Fuente:** Roboflow — dataset propio etiquetado manualmente
-- **Enlace:**
+- Fuente: Roboflow — dataset propio etiquetado manualmente
+- Enlace:
 
 ```python
 !pip install roboflow
@@ -47,15 +47,59 @@ version = project.version(1)
 dataset = version.download("yolo26")
 ```
                 
-- **Split:** 70% entrenamiento / 20% validación / 10% test
-- **Formato de exportación:** YOLO26
-- **Total de imágenes:** 150
+- Split: 70% entrenamiento / 20% validación / 10% test
+- Formato de exportación: YOLO26
+- Total de imágenes: 150
 
 ---
 
 ## 🚀 Cómo Reproducir (Google Colab)
 
-### Opción A — Ejecutar entrenamiento completo
+1. Abrí el notebook desde GitHub:
 
-1. Abrí el notebook desde GitHub:  
-   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/TU_USUARIO/helmet-color-detection/blob/main/notebooks/02_training_evaluation.ipynb)
+   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dalingerj/deteccion-cascos-seguridad-obra-yolo26/blob/main/notebooks/deteccion-cascos-seguridad-obra-yolo26.ipynb)
+
+2. Ejecutá en orden:
+   - Celda 1 (Setup): Instalación de dependencias (ultralytics, roboflow)
+   - Celda 2 (Fine-tune YOLO26 on custom dataset): Descarga del dataset desde Roboflow
+   - Celda 3 (Custom Training): Entrenamiento YOLOv8 (50 épocas) y métricas
+   - Celda 4 (Validate fine-tuned model): Evaluación del modelo best.pt obtenido y métricas
+   - Celda 5 (Inference with custom model): Inferencia de imágenes proporcionadas por el usuario
+   
+     *Cargar imagen personalizada en:*
+   
+   ```python
+   /content/datasets/m4t3-helmet-role-detection-1/test_random_img/images
+   ```
+3. Salidas esperadas:
+
+    | Métrica | Valor Aproximado |
+    |---|---|
+    | Precision (P) | ~0.92 |
+    | Recall (R) | ~0.80 |
+    | mAP50 | ~0.85 |
+
+ Observaciones clave - Matriz de confusión
+  - **white_helmet** y **yellow_helmet** son las clases mejor detectadas.
+  - **green_helmet** es la clase con menor cantidad de detecciones correctas, probablemente por poca representación en el dataset.
+  - Se observan errores de prediccion de cascos blancos, amarillos y azules identificados como **background** (falsos negativos), lo que sugiere que algunos cascos en contextos complejos no son detectados correctamente.
+
+---
+
+## ✅ Checklist de Reproducibilidad
+
+  - Dataset
+  ```python
+  !pip install roboflow
+  
+  from roboflow import Roboflow
+  rf = Roboflow(api_key="g0oBodyeNNOa3ClBHPVn")
+  project = rf.workspace("jonathans-workspace-lsuhr").project("m4t3-helmet-role-detection")
+  version = project.version(1)
+  dataset = version.download("yolo26")
+  ```
+  - Variante del modelo: yolov8m.pt
+  - Epochs: 50 
+  - Batch: 16
+  - imgsz: 640
+  - Ultralytics: 8.4.22
