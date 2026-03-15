@@ -121,3 +121,10 @@ dataset = version.download("yolo26")
 ### 🔗 Archivo best.pt
 
 [best.pt](https://drive.google.com/drive/folders/1jk-Nu9z-Mfewut5IRE0tbb82enFlDtD4?usp=sharing)
+
+---
+
+### 📄 Documentación
+
+- 📊 Informe (PDF): _docs/Detección de Cascos de Seguridad en Obra - Rol x Color.pdf_
+- 📝 Resumen (PDF): _docs/Resumen_Detección de Cascos de Seguridad en Obra - Rol x Color.pdf_
