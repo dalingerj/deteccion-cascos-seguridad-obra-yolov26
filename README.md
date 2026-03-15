@@ -62,7 +62,7 @@ dataset = version.download("yolo26")
 2. Ejecutá en orden:
    - Celda 1 (Setup): Instalación de dependencias (ultralytics, roboflow)
    - Celda 2 (Fine-tune YOLO26 on custom dataset): Descarga del dataset desde Roboflow
-   - Celda 3 (Custom Training): Entrenamiento YOLOv8 (50 épocas) y métricas
+   - Celda 3 (Custom Training): Entrenamiento YOLO26 (50 épocas) y métricas
    - Celda 4 (Validate fine-tuned model): Evaluación del modelo best.pt obtenido y métricas
    - Celda 5 (Inference with custom model): Inferencia de imágenes proporcionadas por el usuario
    
@@ -98,7 +98,7 @@ dataset = version.download("yolo26")
   version = project.version(1)
   dataset = version.download("yolo26")
   ```
-  - Variante del modelo: yolov8m.pt
+  - Variante del modelo: yolo26m.pt
   - Epochs: 50 
   - Batch: 16
   - imgsz: 640
