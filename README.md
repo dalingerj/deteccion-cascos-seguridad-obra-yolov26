@@ -103,3 +103,13 @@ dataset = version.download("yolo26")
   - Batch: 16
   - imgsz: 640
   - Ultralytics: 8.4.22
+
+---
+
+### 🔁 Prueba de Reproducibilidad
+
+| Campo | Detalle |
+|---|---|
+| Última ejecución exitosa | _3/15/2026 - 1:00AM_ |
+| GPU usada | NVIDIA T4 (Google Colab) |
+| Tiempo estimadO de ejecucion | ~5-7 min con GPU T4 |
