@@ -41,7 +41,7 @@ En obras de construcción, el color del casco identifica el **rol** de cada trab
 !pip install roboflow
 
 from roboflow import Roboflow
-rf = Roboflow(api_key="g0oBodyeNNOa3ClBHPVn")
+rf = Roboflow(api_key="g0oB****************")
 project = rf.workspace("jonathans-workspace-lsuhr").project("m4t3-helmet-role-detection")
 version = project.version(1)
 dataset = version.download("yolo26")
